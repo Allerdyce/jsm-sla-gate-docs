@@ -4,7 +4,8 @@
 **App Key:** `com.evidencepair.jsm.sla.gate`  
 **App ID:** `ari:cloud:ecosystem::app/ad9771a0-9b35-45c3-a169-8931e3435fa1`  
 **Developer / Vendor:** EvidencePair LLC  
-**Support & Security Contact:** `support@titlecovenant.com`  
+**Support:** <https://evidencepair.com/support/> (`support@evidencepair.com`)  
+**Security Contact:** `security@evidencepair.com`  
 **Runtime:** Atlassian Forge `nodejs24.x` (100% *Runs on Atlassian* — Zero External Egress, Zero Forge SQL/KVS)
 
 ---
@@ -16,7 +17,7 @@
 ### Key Capabilities
 
 1. **Space SLA Gate Policy & Breach Detector (`jira:projectPage` — `jsm-sla-gate-admin`)**
-   - Configure which JSM SLA clocks (e.g., *Time to first response*, *Time to resolution*) require mandatory post-mortems upon breach.
+   - Shows which JSM SLA clocks require a post-mortem when they breach (by default *Time to first response* and *Time to resolution*).
    - Enforce minimum CAPA preventive action plan length and strict workflow transition blocking.
    - Stored in Jira Project Property `slaGatePolicy` (`<32 KB` enforced).
 
@@ -26,14 +27,16 @@
    - Computes a deterministic SHA-256 signature (`accountId|issueKey|slaName|rootCauseCategory|timestamp|capaSummary`) stored in Jira Issue Property `slaBreachPostMortem` (`<32 KB` enforced).
 
 3. **Workflow Resolution Gate & Space Audit CSV Export (`jira:workflowValidator` — `jsm-sla-resolution-validator`)**
-   - Blocks resolving SLA-breached JSM requests (`BLOCKED_BY_UNSIGNED_SLA_BREACH`) until a valid, tamper-verified SHA-256 Post-Mortem record is present (`CLEARED_FOR_RESOLUTION_SHA256_VERIFIED`).
-   - Provides a space-wide **SLA Breach Post-Mortem Audit Ledger** with 1-click **ISO 27001 / ITIL / SOC2 CSV Export**.
+   - Blocks resolving SLA-breached JSM requests (`BLOCKED_BY_UNSIGNED_SLA_BREACH`) until a valid, checksum-verified SHA-256 Post-Mortem record is present (`CLEARED_FOR_RESOLUTION_SHA256_VERIFIED`).
+   - The project page provides an **SLA Breach Post-Mortem Audit Ledger** of the space's 15 most recently created requests, with 1-click **ISO 27001 / ITIL / SOC2 CSV Export**.
 
 ---
 
 ## Documentation Index
 
 - [User & Administrator Guide](./USER_GUIDE.md)
+- [Privacy Policy](./PRIVACY_POLICY.md)
+- [Security](./SECURITY.md)
 - [Privacy, Data Residency & Security Architecture](./PRIVACY_AND_SECURITY.md)
 - [End-User License Agreement (EULA)](./EULA.md)
 - [Atlassian Marketplace Listing Copy](./LISTING_COPY.md)

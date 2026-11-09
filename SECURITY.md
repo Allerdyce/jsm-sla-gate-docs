@@ -16,7 +16,7 @@ How the Atlassian Marketplace app **SLA Breach Post-Mortem & Root Cause Gate for
   - `manage:jira-project`: save the project's policy.
   - `read:servicedesk-request`: read an issue's SLA cycles.
   - `read:app-data:jira`, `write:app-data:jira`: read and write app data in Jira.
-- **What the checksum is.** Each post-mortem carries a SHA-256 checksum of its contents. It shows whether the stored record still matches what was signed. It is not a digital signature: someone with permission to edit the issue property could change the record and recompute the checksum.
+- **What the checksum is.** Each post-mortem carries a SHA-256 checksum of its account ID, issue key, SLA name, root-cause category, time and preventive action plan (not the impact summary). It shows whether the stored record still matches what was signed. It is not a digital signature: someone with permission to edit the issue property could change the record and recompute the checksum.
 
 ## Encryption
 

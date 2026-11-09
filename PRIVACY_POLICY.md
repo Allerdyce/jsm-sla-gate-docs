@@ -25,7 +25,7 @@ This policy describes the Atlassian Marketplace app **SLA Breach Post-Mortem & R
 - the Atlassian account ID of the person who signed it, and when;
 - the SLA name, the root-cause category, the impact summary and the preventive action plan, as typed;
 - whether the breach was a simulated one;
-- a SHA-256 checksum of those values, which lets the app tell whether the record has changed since it was signed. The checksum adds no information of its own.
+- a SHA-256 checksum of the account ID, issue key, SLA name, root-cause category, time and preventive action plan, which lets the app tell whether those values have changed since the record was signed. It does not cover the impact summary, and it adds no information of its own.
 
 The app does not look up names, email addresses or profiles. Text that people type into a post-mortem can contain personal data, and the app stores it exactly as entered.
 

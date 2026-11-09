@@ -1,7 +1,7 @@
 # End-User License Agreement (EULA)
 
 **Effective Date:** October 14, 2026  
-**Licensor:** EvidencePair LLC (`support@titlecovenant.com`)  
+**Licensor:** EvidencePair LLC (`support@evidencepair.com`)  
 **Product:** SLA Breach Post-Mortem & Root Cause Gate for JSM (`com.evidencepair.jsm.sla.gate`)
 
 ---
@@ -19,4 +19,4 @@ In production environments, the Software requires an active Atlassian Marketplac
 THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL LICENSOR'S AGGREGATE LIABILITY EXCEED THE FEES PAID BY CUSTOMER FOR THE SOFTWARE IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
 
 ## 5. Contact
-Questions regarding this Agreement may be directed to EvidencePair LLC at `support@titlecovenant.com`.
+Questions regarding this Agreement may be directed to EvidencePair LLC at `support@evidencepair.com`.
