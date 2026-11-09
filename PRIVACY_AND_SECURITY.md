@@ -1,5 +1,7 @@
 # Privacy, Data Residency & Security Architecture
 
+> The app's privacy policy is [PRIVACY_POLICY.md](./PRIVACY_POLICY.md), and its security documentation (data handling, encryption, vulnerability management and certifications) is [SECURITY.md](./SECURITY.md). This page is the architecture summary.
+
 **App Title:** SLA Breach Post-Mortem & Root Cause Gate for JSM  
 **App Key:** `com.evidencepair.jsm.sla.gate`  
 **Vendor:** EvidencePair LLC  
@@ -49,4 +51,4 @@ Every write operation passes through `assertPropertyPayloadUnder32KB(payload)` p
 
 ## 5. Vulnerability Disclosure & Security Contact
 
-To report a security issue or request compliance documentation (SOC 2 / ISO 27001 / CAIQ), email `support@titlecovenant.com`. Security inquiries receive an initial response within 24 hours.
+To report a security issue, email `security@evidencepair.com`. We acknowledge every report within one business day. EvidencePair holds no security certifications; see [SECURITY.md](./SECURITY.md).
