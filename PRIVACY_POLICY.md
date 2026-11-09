@@ -1,6 +1,6 @@
 # Privacy policy: SLA Breach Post-Mortem & Root Cause Gate for JSM
 
-Updated 9 November 2026
+Updated 10 November 2026
 
 This policy describes the Atlassian Marketplace app **SLA Breach Post-Mortem & Root Cause Gate for JSM** ("the app"), made by EvidencePair LLC ("EvidencePair", "we"). EvidencePair's company privacy policy, which covers our website and email you send us, is at <https://evidencepair.com/privacy/>.
 
@@ -14,18 +14,21 @@ This policy describes the Atlassian Marketplace app **SLA Breach Post-Mortem & R
 
 **One project property, `slaGatePolicy`, per project that uses the app:**
 
-- the project's key and ID, and its service desk ID;
+- the project's key and ID;
 - the policy: which SLAs need a post-mortem, the root-cause categories people can choose, whether an impact summary is required, the minimum length of the preventive action plan, and whether the workflow validator blocks resolution;
-- test markers for simulated SLA breaches, if someone used that feature: the issue key, the SLA name, the elapsed time shown, and when it was flagged;
 - when the policy was last updated.
+
+A policy saved by an earlier version may also hold the project's service desk ID and test markers for simulated SLA breaches. The app no longer uses either, and drops them the next time the policy is saved.
 
 **One issue property, `slaBreachPostMortem`, per issue with a signed post-mortem:**
 
 - the issue key and the project ID;
 - the Atlassian account ID of the person who signed it, and when;
-- the SLA name, the root-cause category, the impact summary and the preventive action plan, as typed;
-- whether the breach was a simulated one;
+- the name of the breached SLA, as Jira Service Management reports it;
+- the root-cause category, the impact summary and the preventive action plan, as typed;
 - a SHA-256 checksum of the account ID, issue key, SLA name, root-cause category, time and preventive action plan, which lets the app tell whether those values have changed since the record was signed. It does not cover the impact summary, and it adds no information of its own.
+
+A post-mortem signed with an earlier version also carries a `simulatedBreach` flag. The app no longer uses it.
 
 The app does not look up names, email addresses or profiles. Text that people type into a post-mortem can contain personal data, and the app stores it exactly as entered.
 

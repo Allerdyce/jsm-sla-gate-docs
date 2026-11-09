@@ -1,9 +1,11 @@
 # SLA Breach Post-Mortem & Root Cause Gate for JSM — User & Administrator Guide
 
+Updated 10 November 2026
+
 ## 1. Installation & Quick Start
 
 1. Install **SLA Breach Post-Mortem & Root Cause Gate for JSM** from the Atlassian Marketplace into your Jira / Jira Service Management Cloud site.
-2. Open any Jira Service Management project (e.g., **IT Helpdesk**) and select **SLA Breach Post-Mortem & Root Cause Gate for JSM** in the left project sidebar (`jira:projectPage`).
+2. Open any Jira Service Management project and select **SLA Breach Post-Mortem & Root Cause Gate for JSM** in the left project sidebar (`jira:projectPage`).
 3. Review the active Space SLA Gate Policy:
    - **Strict Workflow Resolution Gate**: Enabled by default (`true`).
    - **Enforced JSM SLAs**: `Time to first response`, `Time to resolution`.
@@ -31,12 +33,12 @@ To block agents from resolving SLA-breached requests without a signed post-morte
 ## 3. Completing & Signing an SLA Breach Post-Mortem on an Issue
 
 1. Open the breached JSM request and locate the **SLA Breach Post-Mortem & Root Cause Gate for JSM** panel (`jira:issuePanel`).
-2. Review the live JSM SLA clock table fetched from `/rest/servicedeskapi/request/{issueKey}/sla`.
-3. Complete the three mandatory fields:
+2. Review the live JSM SLA clock table fetched from `/rest/servicedeskapi/request/{issueKey}/sla`. An SLA counts as breached when Jira Service Management marks its current cycle, or any completed cycle, as breached. If the issue has no SLAs (for example, it isn't a service request), the panel says so.
+3. Complete the three mandatory fields. The form starts empty:
    - **Root Cause Category**: Choose `Infrastructure`, `Deployment Regression`, `Third-Party Vendor`, `Capacity/Staffing`, or `Configuration Drift`.
    - **Customer Impact & 5-Whys Summary**: Document customer blast radius and root cause chain.
    - **Corrective & Preventive Action Plan (CAPA)**: Document concrete remediation steps (minimum 20 characters).
-4. Click **Sign & Lock Post-Mortem (SHA-256)**.
+4. Click **Sign & Lock Post-Mortem (SHA-256)**. The button is available only when a target SLA on the request has breached. The post-mortem records the breached SLA as Jira Service Management reports it, and you, the person signed in, as the signer.
 5. The app computes the canonical digest `SHA-256(accountId|issueKey|slaName|rootCauseCategory|timestamp|capaSummary)` and locks the record in `/rest/api/3/issue/{issueKey}/properties/slaBreachPostMortem`.
 
 ---

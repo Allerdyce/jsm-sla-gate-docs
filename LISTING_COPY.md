@@ -14,7 +14,7 @@ Prevent silent SLA breaches from being closed without accountability or engineer
 ### Why Incident & Service Desk Teams Choose SLA Breach Post-Mortem & Root Cause Gate for JSM
 
 1. **Automated JSM SLA Breach Detection (`jira:issuePanel` & `jira:workflowValidator`)**
-   - Inspects live JSM SLA clocks (`/rest/servicedeskapi/request/{issueKey}/sla`) including *Time to first response* and *Time to resolution*.
+   - Inspects live JSM SLA clocks (`/rest/servicedeskapi/request/{issueKey}/sla`) including *Time to first response* and *Time to resolution*. A breach is whatever Jira Service Management reports as breached, in the ongoing cycle or a completed one.
    - Tickets that meet their SLA goals resolve normally with zero extra friction (`CLEARED_NO_SLA_BREACH`).
 
 2. **Structured 5-Whys Root Cause & CAPA Attestation (`jsm-sla-postmortem-panel`)**

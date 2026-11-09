@@ -22,7 +22,8 @@
    - Stored in Jira Project Property `slaGatePolicy` (`<32 KB` enforced).
 
 2. **Structured Root Cause & SHA-256 Post-Mortem Issue Panel (`jira:issuePanel` — `jsm-sla-postmortem-panel`)**
-   - Displays real-time JSM SLA clock status (`/rest/servicedeskapi/request/{issueKey}/sla`).
+   - Displays real-time JSM SLA clock status (`/rest/servicedeskapi/request/{issueKey}/sla`). Breaches come only from Jira Service Management's own SLA cycles, ongoing or completed.
+   - Lets the signed-in user sign a post-mortem only when a target SLA has breached.
    - Captures structured Root Cause Category (`Infrastructure`, `Deployment Regression`, `Third-Party Vendor`, `Capacity/Staffing`, `Configuration Drift`), Customer Impact / 5-Whys Summary, and CAPA Preventive Action Plan.
    - Computes a deterministic SHA-256 signature (`accountId|issueKey|slaName|rootCauseCategory|timestamp|capaSummary`) stored in Jira Issue Property `slaBreachPostMortem` (`<32 KB` enforced).
 
